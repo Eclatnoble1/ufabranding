@@ -1,0 +1,2393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário de Branding | UFA FILM</title>
+    <meta name="description" content="Questionário profissional de branding da UFA FILM para criação de identidade visual completa.">
+    
+    <!-- PREVIEW WHATSAPP/INSTAGRAM/FACEBOOK -->
+    <meta property="og:title" content="Questionário de Branding | UFA FILM">
+    <meta property="og:description" content="Descubra a essência da sua marca através do nosso questionário profissional de branding.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    
+    <!-- Security Headers (when hosted) -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-color: #050505;
+            --surface-color: #0a0a0a;
+            --primary-color: #00f3ff;
+            --secondary-color: #D4AF37;
+            --text-main: #ffffff;
+            --text-gray: #a0a0a0;
+            --text-muted: #666666;
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --success-color: #00ff88;
+            --error-color: #ff4444;
+            --warning-color: #ffaa00;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-main);
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* Preloader */
+        #preloader {
+            position: fixed; inset: 0; background: var(--bg-color);
+            z-index: 10000; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; gap: 2rem;
+        }
+        .preloader-text {
+            font-size: 0.75rem; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 0.4em;
+            opacity: 0; transform: translateY(20px);
+        }
+        .preloader-logo {
+            font-family: 'Orbitron', sans-serif; font-size: 2.5rem; font-weight: 900;
+            background: linear-gradient(90deg, #ffffff, var(--secondary-color));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            letter-spacing: 0.3em; opacity: 0; transform: scale(0.8);
+            text-align: center;
+        }
+        .preloader-bar { width: 250px; height: 3px; background: var(--glass-border); overflow: hidden; border-radius: 2px; }
+        .preloader-progress { width: 0%; height: 100%; background: linear-gradient(90deg, var(--secondary-color), var(--primary-color)); }
+
+        /* Navigation */
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 1.2rem 5%;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000; transition: all 0.4s ease;
+            background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .logo {
+            font-family: 'Orbitron', sans-serif; font-size: 1.5rem; font-weight: 900;
+            background: linear-gradient(90deg, #ffffff 0%, var(--secondary-color) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            letter-spacing: 0.15em;
+        }
+        .nav-info {
+            font-size: 0.8rem; color: var(--text-gray);
+            text-transform: uppercase; letter-spacing: 0.1em;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            position: fixed; top: 70px; left: 0; right: 0;
+            height: 4px; background: var(--glass-border);
+            z-index: 999;
+        }
+        .progress-bar {
+            height: 100%; width: 0%;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transition: width 0.5s ease;
+        }
+        .progress-text {
+            position: fixed; top: 80px; right: 5%;
+            font-family: 'Orbitron', sans-serif; font-size: 0.75rem;
+            color: var(--primary-color); letter-spacing: 0.1em;
+            z-index: 999;
+        }
+
+        /* Security Badge */
+        .security-badge {
+            position: fixed; top: 80px; left: 5%;
+            display: flex; align-items: center; gap: 0.5rem;
+            font-size: 0.7rem; color: var(--success-color);
+            z-index: 999;
+        }
+        .security-badge i { font-size: 0.9rem; }
+
+        /* Main Container */
+        .main-container {
+            padding: 140px 5% 4rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Header Section */
+        .header-section {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .header-section h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, var(--text-main), var(--secondary-color));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .header-section p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        .header-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(0, 243, 255, 0.1);
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 2rem;
+            border-radius: 50px;
+        }
+
+        /* LGPD Banner */
+        .lgpd-banner {
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.08), rgba(0, 243, 255, 0.05));
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .lgpd-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px; height: 100%;
+            background: var(--success-color);
+        }
+        .lgpd-banner h3 {
+            font-size: 1rem;
+            color: var(--success-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .lgpd-banner h3 i {
+            font-size: 1.2rem;
+        }
+        .lgpd-banner p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .lgpd-banner ul {
+            margin-top: 1rem;
+        }
+        .lgpd-banner ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+        .lgpd-banner ul li i {
+            color: var(--success-color);
+            margin-top: 0.2rem;
+            font-size: 0.7rem;
+        }
+
+        /* Form Sections */
+        .form-section {
+            background: var(--surface-color);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        .form-section::before {
+            content: '';
+            position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+            background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .form-section:hover::before {
+            opacity: 1;
+        }
+        .form-section:hover {
+            border-color: rgba(0, 243, 255, 0.3);
+        }
+        
+        .section-number {
+            position: absolute;
+            top: 1.5rem; right: 2rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.03);
+            line-height: 1;
+        }
+        
+        .section-header {
+            margin-bottom: 2.5rem;
+        }
+        .section-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .section-title i {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+        .section-description {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+        .form-label {
+            display: block;
+            margin-bottom: 0.6rem;
+            color: var(--text-main);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .form-label .required {
+            color: var(--primary-color);
+            margin-left: 0.3rem;
+        }
+        .form-hint {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+            font-style: italic;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+            border-radius: 6px;
+        }
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.15);
+            background: rgba(0, 243, 255, 0.03);
+        }
+        .form-control::placeholder {
+            color: var(--text-muted);
+        }
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-select {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2300f3ff' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+        }
+        .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.15);
+        }
+        .form-select option {
+            background: var(--bg-color);
+            color: var(--text-main);
+            padding: 0.5rem;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        .form-row-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        /* Checkbox and Radio Styles */
+        .checkbox-group, .radio-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+        }
+        .checkbox-item, .radio-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.8rem 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--glass-border);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .checkbox-item:hover, .radio-item:hover {
+            border-color: var(--primary-color);
+            background: rgba(0, 243, 255, 0.05);
+        }
+        .checkbox-item input, .radio-item input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .checkmark, .radiomark {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--text-muted);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+        .radiomark {
+            border-radius: 50%;
+        }
+        .checkbox-item input:checked ~ .checkmark,
+        .radio-item input:checked ~ .radiomark {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        .checkmark::after, .radiomark::after {
+            content: '';
+            display: none;
+        }
+        .checkbox-item input:checked ~ .checkmark::after {
+            content: '✓';
+            display: block;
+            color: var(--bg-color);
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .radio-item input:checked ~ .radiomark::after {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            background: var(--bg-color);
+            border-radius: 50%;
+        }
+        .checkbox-item span, .radio-item span {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        .checkbox-item input:checked ~ span,
+        .radio-item input:checked ~ span {
+            color: var(--text-main);
+        }
+
+        /* Rating Scale */
+        .rating-scale {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .rating-item {
+            position: relative;
+        }
+        .rating-item input {
+            position: absolute;
+            opacity: 0;
+        }
+        .rating-item label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--glass-border);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+        .rating-item input:checked ~ label {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: var(--bg-color);
+        }
+        .rating-item label:hover {
+            border-color: var(--primary-color);
+        }
+        .rating-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Color Picker Grid */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .color-item {
+            position: relative;
+            text-align: center;
+        }
+        .color-item input {
+            position: absolute;
+            opacity: 0;
+        }
+        .color-item label {
+            display: block;
+            cursor: pointer;
+        }
+        .color-swatch {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 8px;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+            margin-bottom: 0.5rem;
+        }
+        .color-item input:checked ~ label .color-swatch {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.5);
+        }
+        .color-name {
+            font-size: 0.75rem;
+            color: var(--text-gray);
+        }
+        .color-item input:checked ~ label .color-name {
+            color: var(--primary-color);
+        }
+
+        /* Conditional Sections */
+        .conditional-section {
+            display: none;
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+            border-top: 1px dashed var(--glass-border);
+        }
+        .conditional-section.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* File Upload */
+        .file-upload {
+            border: 2px dashed var(--glass-border);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .file-upload:hover {
+            border-color: var(--primary-color);
+            background: rgba(0, 243, 255, 0.03);
+        }
+        .file-upload i {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        .file-upload p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+        .file-upload input {
+            display: none;
+        }
+        .file-list {
+            margin-top: 1rem;
+        }
+        .file-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+        .file-item i {
+            color: var(--primary-color);
+        }
+        .file-item span {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+        }
+
+        /* LGPD Consent Section */
+        .lgpd-consent {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(0, 243, 255, 0.05));
+            border: 2px solid var(--secondary-color);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+        }
+        .lgpd-consent h3 {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .lgpd-consent-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+        }
+        .lgpd-consent-item input[type="checkbox"] {
+            width: 22px;
+            height: 22px;
+            accent-color: var(--primary-color);
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+        .lgpd-consent-item label {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            cursor: pointer;
+        }
+        .lgpd-consent-item label a {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+        .lgpd-consent-item label strong {
+            color: var(--text-main);
+        }
+
+        /* Privacy Policy Modal */
+        .privacy-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10001;
+            overflow-y: auto;
+            padding: 2rem;
+            animation: fadeIn 0.3s ease;
+        }
+        .privacy-modal.show {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+        .privacy-content {
+            background: var(--surface-color);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            max-width: 800px;
+            width: 100%;
+            padding: 3rem;
+            margin: 2rem auto;
+            position: relative;
+        }
+        .privacy-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 50%;
+            color: var(--text-gray);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        .privacy-close:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+        .privacy-content h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .privacy-content h3 {
+            font-size: 1rem;
+            color: var(--secondary-color);
+            margin: 1.5rem 0 1rem;
+        }
+        .privacy-content p, .privacy-content li {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .privacy-content ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .privacy-content ul li {
+            list-style: disc;
+            margin-bottom: 0.5rem;
+        }
+        .privacy-content strong {
+            color: var(--text-main);
+        }
+
+        /* Submit Section */
+        .submit-section {
+            text-align: center;
+            padding: 3rem;
+            background: linear-gradient(135deg, rgba(0, 243, 255, 0.05), rgba(212, 175, 55, 0.05));
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            margin-top: 3rem;
+        }
+        .submit-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .submit-section p {
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+        }
+        .form-submit {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem 3.5rem;
+            background: transparent;
+            border: 2px solid var(--secondary-color);
+            color: var(--secondary-color);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border-radius: 6px;
+        }
+        .form-submit:hover:not(:disabled) {
+            background: var(--secondary-color);
+            color: var(--bg-color);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+        }
+        .form-submit:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Success Message */
+        .success-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(5, 5, 5, 0.98);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            text-align: center;
+            padding: 2rem;
+        }
+        .success-overlay.show {
+            display: flex;
+            animation: fadeIn 0.5s ease;
+        }
+        .success-content {
+            max-width: 500px;
+        }
+        .success-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2.5rem;
+            color: var(--bg-color);
+        }
+        .success-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, var(--text-main), var(--secondary-color));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .success-content p {
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        .success-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+        .success-btn:hover {
+            background: var(--primary-color);
+            color: var(--bg-color);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 5%;
+            border-top: 1px solid var(--glass-border);
+            text-align: center;
+            background: var(--surface-color);
+            margin-top: 4rem;
+        }
+        .footer-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            background: linear-gradient(90deg, #ffffff, var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 0.2em;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: var(--text-gray);
+            font-size: 0.8rem;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--surface-color);
+            border-left: 4px solid var(--secondary-color);
+            color: var(--text-main);
+            padding: 1.2rem 2rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            z-index: 3000;
+            transform: translateX(150%);
+            transition: transform 0.4s ease;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        .toast.show {
+            transform: translateX(0);
+        }
+        .toast.error {
+            border-left-color: var(--error-color);
+        }
+        .toast i {
+            color: var(--secondary-color);
+            margin-right: 0.5rem;
+        }
+        .toast.error i {
+            color: var(--error-color);
+        }
+
+        /* Honeypot field - hidden from users */
+        .honeypot {
+            position: absolute;
+            left: -9999px;
+            opacity: 0;
+            height: 0;
+            width: 0;
+            z-index: -1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 130px 4% 2rem;
+            }
+            .form-section {
+                padding: 2rem 1.5rem;
+            }
+            .form-row, .form-row-3 {
+                grid-template-columns: 1fr;
+            }
+            .checkbox-group, .radio-group {
+                grid-template-columns: 1fr;
+            }
+            .rating-scale {
+                justify-content: center;
+            }
+            .nav-info {
+                display: none;
+            }
+            .section-number {
+                font-size: 2rem;
+                top: 1rem;
+                right: 1rem;
+            }
+            .security-badge {
+                display: none;
+            }
+            .lgpd-consent {
+                padding: 1.5rem;
+            }
+            .privacy-content {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-text">Carregando Questionário Seguro</div>
+        <div class="preloader-logo">BRANDING</div>
+        <div class="preloader-bar"><div class="preloader-progress"></div></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <a href="https://eclatnoble1.github.io/ufa.film/" class="logo">UFA <span style="font-size:0.5em;display:block;">FILM</span></a>
+        <div class="nav-info">Questionário de Branding Profissional</div>
+    </nav>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <div class="progress-text" id="progressText">0% Completo</div>
+
+    <!-- Security Badge -->
+    <div class="security-badge">
+        <i class="fas fa-shield-alt"></i>
+        <span>Dados Protegidos | LGPD Compatível</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Header -->
+        <div class="header-section">
+            <span class="header-badge"><i class="fas fa-palette"></i> Criação de Identidade Visual</span>
+            <h1>Questionário de Branding</h1>
+            <p>Este questionário foi desenvolvido para extrair o máximo de informações sobre sua marca. Quanto mais detalhadas forem suas respostas, mais precisa e impactante será sua identidade visual.</p>
+        </div>
+
+        <!-- LGPD Information Banner -->
+        <div class="lgpd-banner">
+            <h3><i class="fas fa-user-shield"></i> Proteção de Dados - LGPD</h3>
+            <p>Sua privacidade é nossa prioridade. Este questionário foi desenvolvido em conformidade com a <strong>Lei Geral de Proteção de Dados (Lei nº 13.709/2018)</strong>.</p>
+            <ul>
+                <li><i class="fas fa-check"></i> Seus dados serão utilizados exclusivamente para a criação do seu projeto de branding</li>
+                <li><i class="fas fa-check"></i> Não compartilhamos suas informações com terceiros sem consentimento</li>
+                <li><i class="fas fa-check"></i> Você pode solicitar a exclusão de seus dados a qualquer momento</li>
+                <li><i class="fas fa-check"></i> Transmissão segura via conexão criptografada (HTTPS)</li>
+                <li><i class="fas fa-check"></i> Seus dados são armazenados de forma segura e confidencial</li>
+            </ul>
+        </div>
+
+        <!-- Form -->
+        <form id="brandingForm" action="https://formsubmit.co/eclatnoble1@gmail.com" method="POST" enctype="multipart/form-data">
+            
+            <!-- Security Fields for FormSubmit -->
+            <input type="hidden" name="_subject" value="📋 Questionário de Branding - Novo Cliente">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="">
+            <input type="hidden" name="_honey" value="">
+            <input type="text" name="_honey" value="" style="display:none">
+            <input type="hidden" name="_response" value="Obrigado por responder nosso questionário! Entraremos em contato em breve.">
+            
+            <!-- Honeypot field for bot protection -->
+            <div class="honeypot" aria-hidden="true">
+                <label for="website">Website:</label>
+                <input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
+            </div>
+            
+            <!-- SECTION 1: Informações Básicas -->
+            <div class="form-section" data-section="1">
+                <span class="section-number">01</span>
+                <div class="section-header">
+                    <h3 class="section-title"><i class="fas fa-building"></i> Informações Básicas da Empresa</h3>
+                    <p class="section-description">Vamos começar conhecendo sua empresa. Estas informações básicas nos ajudam a entender o contexto do seu negócio.</p>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Nome da Empresa / Marca <span class="required">*</span></label>
+                        <input type="text" class="form-control" name="nome_empresa" placeholder="Ex: UFA FILM" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Nome Fantasia (se diferente)</label>
+                        <input type="text" class="form-control" name="nome_fantasia" placeholder="Ex: UFA">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">CNPJ (se possuir)</label>
+                        <input type="text" class="form-control" name="cnpj" placeholder="00.000.000/0001-00">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Data de Fundação</label>
+                        <input type="date" class="form-control" name="data_fundacao">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Segmento / Ramo de Atuação <span class="required">*</span></label>
+                    <select class="form-select" name="segmento" required>
+                        <option value="" disabled selected>Selecione o segmento principal</option>
+                        <option value="Alimentação e Gastronomia">Alimentação e Gastronomia</option>
+                        <option value="Tecnologia e Software">Tecnologia e Software</option>
+                        <option value="Saúde e Bem-estar">Saúde e Bem-estar</option>
+                        <option value="Beleza e Cosméticos">Beleza e Cosméticos</option>
+                        <option value="Moda e Vestuário">Moda e Vestuário</option>
+                        <option value="Educação e Cursos">Educação e Cursos</option>
+                        <option value="Fitness e Esportes">Fitness e Esportes</option>
+                        <option value="Imobiliário e Construção">Imobiliário e Construção</option>
+                        <option value="Financeiro e Investimentos">Financeiro e Investimentos</option>
+                        <option value="Entretenimento e Lazer">Entretenimento e Lazer</option>
+                        <option value="Turismo e Viagens">Turismo e Viagens</option>
+                        <option value="Automotivo">Automotivo</option>
+                        <option value="Serviços Profissionais">Serviços Profissionais</option>
+                        <option value="E-commerce e Varejo">E-commerce e Varejo</option>
+                        <option value="Agronegócio">Agronegócio</option>
+                        <option value="Sustentabilidade e Meio Ambiente">Sustentabilidade e Meio Ambiente</option>
+                        <option value="Eventos e Produção">Eventos e Produção</option>
+                        <option value="Comunicação e Marketing">Comunicação e Marketing</option>
+                        <option value="Design e Criatividade">Design e Criatividade</option>
+                        <option value="Consultoria">Consultoria</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                </div>
+
+                <div class="conditional-section" id="outroSegmento">
+                    <div class="form-group">
+                        <label class="form-label">Especifique o Segmento <span class="required">*</span></label>
+                        <input type="text" class="form-control" name="segmento_outro" placeholder="Descreva seu segmento">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Subsegmento ou Especialização</label>
+                    <input type="text" class="form-control" name="subsegmento" placeholder="Ex: Produção audiovisual cinematográfica, Comida gourmet artesanal...">
+                    <span class="form-hint">Seja específico sobre sua área de atuação dentro do segmento</span>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Porte da Empresa <span class="required">*</span></label>
+                        <select class="form-select" name="porte_empresa" required>
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="Microempreendedor (MEI)">Microempreendedor (MEI)</option>
+                            <option value="Microempresa (ME)">Microempresa (ME) - até 9 funcionários</option>
+                            <option value="Pequena Empresa (EPP)">Pequena Empresa (EPP) - 10 a 49 funcionários</option>
+                            <option value="Média Empresa">Média Empresa - 50 a 199 funcionários</option>
+                            <option value="Grande Empresa">Grande Empresa - 200+ funcionários</option>
+                            <option value="Startup em fase inicial">Startup em fase inicial</option>
+                            <option value="Startup em crescimento">Startup em crescimento</option>
+                            <option value="Profissional Autônomo">Profissional Autônomo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Tempo de Mercado <span class="required">*</span></label>
+                        <select class="form-select" name="tempo_mercado" required>
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="Ainda não iniciei">Ainda não iniciei (fase de planejamento)</option>
+                            <option value="Menos de 1 ano">Menos de 1 ano</option>
+                            <option value="1 a 2 anos">1 a 2 anos</option>
+                            <option value="3 a 5 anos">3 a 5 anos</option>
+                            <option value="6 a 10 anos">6 a 10 anos</option>
+                            <option value="Mais de 10 anos">Mais de 10 anos</option>
+                            <option value="Mais de 20 anos">Mais de 20 anos</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Cidade <span class="required">*</span></label>
+                        <input type="text" class="form-control" name="cidade" placeholder="Ex: Goiânia" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Estado <span class="required">*</span></label>
+                        <select class="form-select" name="estado" required>
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Principais Produtos ou Serviços <span class="required">*</span></label>
+                    <textarea class="form-control" name="produtos_servicos" placeholder="Liste seus principais produtos ou serviços, um por linha. Seja específico sobre o que sua empresa oferece." required></textarea>
+                    <span class="form-hint">Descreva detalhadamente cada produto/serviço oferecido</span>
+                </div>
+            </div>
+
+            <!-- SECTION 2: Identidade e Propósito -->
+            <div class="form-section" data-section="2">
+                <span class="section-number">02</span>
+                <div class="section-header">
+                    <h3 class="section-title"><i class="fas fa-bullseye"></i> Identidade e Propósito</h3>
+                    <p class="section-description">A essência da sua marca. Estas questões ajudam a definir o DNA da sua empresa e o que a torna única no mercado.</p>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Missão da Empresa <span class="required">*</span></label>
+                    <textarea class="form-control" name="missao" placeholder="Ex: Transformar visões em experiências visuais inesquecíveis, criando conexões emocionais entre marcas e seu público através de imagens de alto impacto." required></textarea>
+                    <span class="form-hint">A missão define o propósito da existência da sua empresa. O que você faz, para quem e por que?</span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Visão da Empresa</label>
+                    <textarea class="form-control" name="visao" placeholder="Ex: Ser referência nacional em produção audiovisual de alto padrão, reconhecida pela excelência técnica e criatividade ilimitada."></textarea>
+                    <span class="form-hint">Onde você quer que sua empresa esteja em 5-10 anos? Qual é o sonho grande?</span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Valores da Empresa <span class="required">*</span></label>
+                    <textarea class="form-control" name="valores" placeholder="Ex: Excelência, Criatividade, Transparência, Compromisso, Inovação, Respeito ao cliente..." required></textarea>
+                    <span class="form-hint">Liste 3-6 valores fundamentais que guiam as decisões e comportamentos da sua empresa</span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">História da Empresa</label>
+                    <textarea class="form-control" name="historia" placeholder="Conte a história de como sua empresa surgiu. Qual foi a inspiração inicial? Quais desafios foram superados? Quem são os fundadores e qual sua trajetória?"></textarea>
+                    <span class="form-hint">Uma boa história cria conexão emocional com o público</span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Propósito Maior (Purpose) <span class="required">*</span></label>
+                    <textarea class="form-control" name="proposito" placeholder="Além de lucrar, qual problema sua empresa resolve para o mundo? Qual impacto positivo quer gerar?" required></textarea>
+                    <span class="form-hint">O propósito vai além do produto - é a razão emocional pela qual as pessoas se conectam com sua marca</span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Diferencial Competitivo <span class="required">*</span></label>
+                    <textarea class="form-control" name="diferencial" placeholder="O que torna sua empresa única? Por que o cliente deveria escolher você em vez da concorrência? Seja específico e evite clichês como 'qualidade' ou 'bom atendimento'." required></textarea>
+                    <span class="form-hint">Seu diferencial deve ser concreto, demonstrável e difícil de copiar</span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Proposta de Valor Única (UVP)</label>
+                    <textarea class="form-control" name="uvp" placeholder="Em uma frase, resuma o valor único que sua empresa oferece: 'Para [público-alvo] que [necessidade], nossa [produto/serviço] oferece [benefício principal] diferente de [concorrência] porque [diferencial].'"></textarea>
+                    <span class="form-hint">A proposta de valor única sintetiza o diferencial de forma clara e memorável</span>
+                </div>
+            </div>
+
+            <!-- SECTION 3: Público-Alvo -->
+            <div class="form-section" data-section="3">
+                <span class="section-number">03</span>
+                <div class="section-header">
+                    <h3 class="section-title"><i class="fas fa-users"></i> Público-Alvo</h3>
+                    <p class="section-description">Conhecer profundamente seu público é fundamental para criar uma marca que conecte. Quanto mais específico, melhor.</p>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Tipo de Cliente Principal <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-item">
+                            <input type="radio" name="tipo_cliente" value="B2C (Consumidor final)" required>
+                            <span class="radiomark"></span>
+                            <span>B2C (Consumidor final)</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="tipo_cliente" value="B2B (Outras empresas)">
+                            <span class="radiomark"></span>
+                            <span>B2B (Outras empresas)</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="tipo_cliente" value="B2B e B2C (Ambos)">
+                            <span class="radiomark"></span>
+                            <span>B2B e B2C (Ambos)</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="tipo_cliente" value="Governo / Institucional">
+                            <span class="radiomark"></span>
+                            <span>Governo / Institucional</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Perfil Demográfico do Público-Alvo <span class="required">*</span></label>
+                    <textarea class="form-control" name="perfil_demografico" placeholder="Descreva seu cliente ideal:
+- Faixa etária (Ex: 25-45 anos)
+- Gênero predominante
+- Renda familiar estimada
+- Escolaridade
+- Profissões comuns
+- Estado civil
+- Onde moram (urbano, rural, região específica)" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Perfil Psicográfico</label>
+                    <textarea class="form-control" name="perfil_psicografico" placeholder="Descreva aspectos comportamentais:
+- Interesses e hobbies
+- Estilo de vida
+- Valores e crenças
+- Personalidade
+- Hábitos de consumo
+- Mídia que consome
+- Influenciadores que segue"></textarea>
+                    <span class="form-hint">O perfil psicográfico vai além de dados demográficos - revela como seu cliente pensa e se comporta</span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Principais Dores e Necessidades do Público <span class="required">*</span></label>
+                    <textarea class="form-control" name="dores_necessidades" placeholder="Quais são os maiores problemas, frustrações e desafios que seu público enfrenta? O que os mantém acordados à noite? O que eles tentaram resolver sem sucesso?" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Desejos e Aspirações do Público</label>
+                    <textarea class="form-control" name="desejos_aspiracoes" placeholder="O que seu público realmente deseja? Quais são seus sonhos e ambições? Como eles se sentiram após usar seu produto/serviço?"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Processo de Decisão de Compra</label>
+                    <textarea class="form-control" name="processo_decisao" placeholder="Como seu público toma a decisão de comprar? Quem influencia essa decisão? Quanto tempo levam para decidir? Quais critérios usam para comparar opções?"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Objecções Comuns</label>
+                    <textarea class="form-control" name="objecoes" placeholder="Quais são as principais objeções que seu público tem? O que os impede de comprar? Quais dúvidas frequentes surgem?"></textarea>
+                    <span class="form-hint">Conhecer as objeções ajuda a criar uma marca que as antecipe e responda</span>
+                </div>
+            </div>
+
+            <!-- SECTION 4: Análise de Concorrência -->
+            <div class="form-section" data-section="4">
+                <span class="section-number">04</span>
+                <div class="section-header">
+                    <h3 class="section-title"><i class="fas fa-chart-line"></i> Análise de Concorrência</h3>
+                    <p class="section-description">Entender o cenário competitivo é essencial para posicionar sua marca de forma única e relevante.</p>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Posicionamento no Mercado</label>
+                    <div class="radio-group">
+                        <label class="radio-item">
+                            <input type="radio" name="posicionamento" value="Premium / Luxo">
+                            <span class="radiomark"></span>
+                            <span>Premium / Luxo</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="posicionamento" value="Alto padrão">
+                            <span class="radiomark"></span>
+                            <span>Alto padrão</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="posicionamento" value="Médio padrão">
+                            <span class="radiomark"></span>
+                            <span>Médio padrão</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="posicionamento" value="Custo-benefício">
+                            <span class="radiomark"></span>
+                            <span>Custo-benefício</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="posicionamento" value="Econômico">
+                            <span class="radiomark"></span>
+                            <span>Econômico</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Principais Concorrentes Diretos <span class="required">*</span></label>
+                    <textarea class="form-control" name="concorrentes_diretos" placeholder="Liste 3-5 concorrentes diretos (oferecem o mesmo produto/serviço para o mesmo público):
+1. Nome da empresa - Site - O que oferecem
+2. ..." required></textarea>
+                    <span class="form-hint">Concorrentes diretos vendem produtos/serviços similares para o mesmo público</span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Concorrentes Indiretos</label>
+                    <textarea class="form-control" name="concorrentes_indiretos" placeholder="Liste concorrentes indiretos (oferecem soluções alternativas para o mesmo problema):"></textarea>
+                    <span class="form-hint">Concorrentes indiretos resolvem o mesmo problema de forma diferente</span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">O que os Concorrentes Fazem Bem?</label>
+                    <textarea class="form-control" name="concorrentes_pontos_fortes" placeholder="Analise honestamente os pontos fortes da concorrência. O que eles fazem melhor que você? O que você admira neles?"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">O que os Concorrentes Podem Melhorar?</label>
+                    <textarea class="form-control" name="concorrentes_pontos_fracos" placeholder="Identifique as falhas e fraquezas da concorrência. Onde eles deixam a desejar? O que os clientes reclamam?"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Lacunas no Mercado</label>
+                    <textarea class="form-control" name="lacunas_mercado" placeholder="Quais necessidades do mercado não estão sendo atendidas? O que ninguém está oferecendo? Onde está a oportunidade?"></textarea>
+                    <span class="form-hint">As melhores oportunidades estão nas lacunas que a concorrência ignorou</span>
+                </div>
+            </div>
+
+            <!-- SECTION 5: Personalidade da Marca -->
+            <div class="form-section" data-section="5">
+                <span class="section-number">05</span>
+                <div class="section-header">
+                    <h3 class="section-title"><i class="fas fa-mask"></i> Personalidade da Marca</h3>
+                    <p class="section-description">Sua marca tem personalidade própria. Definir essa personalidade garante consistência em toda comunicação.</p>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Arquétipo da Marca <span class="required">*</span></label>
+                    <p class="section-description" style="margin-bottom: 1rem;">Selecione o arquétipo que melhor representa sua marca:</p>
+                    <div class="radio-group" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));">
+                        <label class="radio-item">
+                            <input type="radio" name="arquetipo" value="O Herói" required>
+                            <span class="radiomark"></span>
+                            <span><strong>O Herói</strong> - Coragem, superação</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="arquetipo" value="O Sábio">
+                            <span class="radiomark"></span>
+                            <span><strong>O Sábio</strong> - Conhecimento, verdade</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="arquetipo" value="O Inocente">
+                            <span class="radiomark"></span>
+                            <span><strong>O Inocente</strong> - Pureza, otimismo</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="arquetipo" value="O Explorador">
+                            <span class="radiomark"></span>
+                            <span><strong>O Explorador</strong> - Liberdade, aventura</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="arquetipo" value="O Fora da Lei">
+                            <span class="radiomark"></span>
+                            <span><strong>O Fora da Lei</strong> - Rebelião, revolução</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="arquetipo" value="O Mago">
+                            <span class="radiomark"></span>
+                            <span><strong>O Mago</strong> - Transformação, magia</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="arquetipo" value="O Cara Comum">
+                            <span class="radiomark"></span>
+                            <span><strong>O Cara Comum</strong> - Autenticidade</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="arquetipo" value="O Amante">
+                            <span class="radiomark"></span>
+                            <span><strong>O Amante</strong> - Paixão, intimidade</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="arquetipo" value="O Bobo da Corte">
+                            <span class="radiomark"></span>
+                            <span><strong>O Bobo</strong> - Alegria, humor</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="arquetipo" value="O Prestativo">
+                            <span class="radiomark"></span>
+                            <span><strong>O Prestativo</strong> - Serviço, cuidado</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="arquetipo" value="O Criador">
+                            <span class="radiomark"></span>
+                            <span><strong>O Criador</strong> - Criatividade, inovação</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="arquetipo" value="O Governante">
+                            <span class="radiomark"></span>
+                            <span><strong>O Governante</strong> - Liderança, prestigio</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Atributos de Personalidade <span class="required">*</span></label>
+                    <p class="section-description" style="margin-bottom: 1rem;">Selecione 3-5 atributos que definem a personalidade da sua marca:</p>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="atributos" value="Inovador">
+                            <span class="checkmark"></span>
+                            <span>Inovador</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="atributos" value="Confiável">
+                            <span class="checkmark"></span>
+                            <span>Confiável</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="atributos" value="Sofisticado">
+                            <span class="checkmark"></span>
+                            <span>Sofisticado</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="atributos" value="Divertido">
+                            <span class="checkmark"></span>
+                            <span>Divertido</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="atributos" value="Sério">
+                            <span class="checkmark"></span>
+                            <span>Sério</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="atributos" value="Moderno">
+                            <span class="checkmark"></span>
+                            <span>Moderno</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="atributos" value="Tradicional">
+                            <span class="checkmark"></span>
+                            <span>Tradicional</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="atributos" value="Ousado">
+                            <span class="checkmark"></span>
+                            <span>Ousado</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="atributos" value="Acolhedor">
+                            <span class="checkmark"></span>
+                            <span>Acolhedor</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="atributos" value="Exclusivo">
+                            <span class="checkmark"></span>
+                            <span>Exclusivo</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="atributos" value="Acessível">
+                            <span class="checkmark"></span>
+                            <span>Acessível</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="atributos" value="Luxuoso">
+                            <span class="checkmark"></span>
+                            <span>Luxuoso</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="atributos" value="Minimalista">
+                            <span class="checkmark"></span>
+                            <span>Minimalista</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="atributos" value="Artesanal">
+                            <span class="checkmark"></span>
+                            <span>Artesanal</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="atributos" value="Autêntico">
+                            <span class="checkmark"></span>
+                            <span>Autêntico</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Tom de Voz <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-item">
+                            <input type="radio" name="tom_voz" value="Formal e Institucional" required>
+                            <span class="radiomark"></span>
+                            <span>Formal e Institucional</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="tom_voz" value="Profissional mas Acessível">
+                            <span class="radiomark"></span>
+                            <span>Profissional mas Acessível</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="tom_voz" value="Amigável e Próximo">
+                            <span class="radiomark"></span>
+                            <span>Amigável e Próximo</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="tom_voz" value="Descontraído e Informal">
+                            <span class="radiomark"></span>
+                            <span>Descontraído e Informal</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="tom_voz" value="Inspirador e Motivacional">
+                            <span class="radiomark"></span>
+                            <span>Inspirador e Motivacional</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="tom_voz" value="Sofisticado e Elegante">
+                            <span class="radiomark"></span>
+                            <span>Sofisticado e Elegante</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Se sua marca fosse uma pessoa, quem seria?</label>
+                    <textarea class="form-control" name="marca_pessoa" placeholder="Ex: Se fosse uma celebridade, seria o Robert Downey Jr. - talentoso, carismático, inovador, com um toque de ousadia..."></textarea>
+                    <span class="form-hint">Esta analogia ajuda a visualizar a personalidade da marca</span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">O que sua marca NÃO é <span class="required">*</span></label>
+                    <textarea class="form-control" name="marca_nao_e" placeholder="Liste características, comportamentos e associações que você NÃO quer que sua marca tenha. Ex: 'Não somos genéricos', 'Não somos agressivos', 'Não somos baratos'..." required></textarea>
+                    <span class="form-hint">Definir o que você NÃO é ajuda a evitar posicionamentos errados</span>
+                </div>
+            </div>
+
+            <!-- SECTION 6: Identidade Visual -->
+            <div class="form-section" data-section="6">
+                <span class="section-number">06</span>
+                <div class="section-header">
+                    <h3 class="section-title"><i class="fas fa-palette"></i> Identidade Visual</h3>
+                    <p class="section-description">A parte visual da sua marca - cores, formas e estilos que comunicam sua personalidade.</p>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Preferência de Cores Primárias <span class="required">*</span></label>
+                    <p class="section-description" style="margin-bottom: 1rem;">Selecione até 3 cores principais para sua marca:</p>
+                    <div class="color-grid">
+                        <div class="color-item">
+                            <input type="checkbox" name="cores_primarias" value="Azul" id="cor_azul">
+                            <label for="cor_azul">
+                                <div class="color-swatch" style="background: #0066FF;"></div>
+                                <span class="color-name">Azul</span>
+                            </label>
+                        </div>
+                        <div class="color-item">
+                            <input type="checkbox" name="cores_primarias" value="Azul Escuro" id="cor_azul_escuro">
+                            <label for="cor_azul_escuro">
+                                <div class="color-swatch" style="background: #003366;"></div>
+                                <span class="color-name">Azul Escuro</span>
+                            </label>
+                        </div>
+                        <div class="color-item">
+                            <input type="checkbox" name="cores_primarias" value="Azul Claro/Ciano" id="cor_ciano">
+                            <label for="cor_ciano">
+                                <div class="color-swatch" style="background: #00f3ff;"></div>
+                                <span class="color-name">Ciano</span>
+                            </label>
+                        </div>
+                        <div class="color-item">
+                            <input type="checkbox" name="cores_primarias" value="Verde" id="cor_verde">
+                            <label for="cor_verde">
+                                <div class="color-swatch" style="background: #00CC66;"></div>
+                                <span class="color-name">Verde</span>
+                            </label>
+                        </div>
+                        <div class="color-item">
+                            <input type="checkbox" name="cores_primarias" value="Laranja" id="cor_laranja">
+                            <label for="cor_laranja">
+                                <div class="color-swatch" style="background: #FF6600;"></div>
+                                <span class="color-name">Laranja</span>
+                            </label>
+                        </div>
+                        <div class="color-item">
+                            <input type="checkbox" name="cores_primarias" value="Vermelho" id="cor_vermelho">
+                            <label for="cor_vermelho">
+                                <div class="color-swatch" style="background: #FF0000;"></div>
+                                <span class="color-name">Vermelho</span>
+                            </label>
+                        </div>
+                        <div class="color-item">
+                            <input type="checkbox" name="cores_primarias" value="Rosa" id="cor_rosa">
+                            <label for="cor_rosa">
+                                <div class="color-swatch" style="background: #FF66CC;"></div>
+                                <span class="color-name">Rosa</span>
+                            </label>
+                        </div>
+                        <div class="color-item">
+                            <input type="checkbox" name="cores_primarias" value="Roxo" id="cor_roxo">
+                            <label for="cor_roxo">
+                                <div class="color-swatch" style="background: #9933FF;"></div>
+                                <span class="color-name">Roxo</span>
+                            </label>
+                        </div>
+                        <div class="color-item">
+                            <input type="checkbox" name="cores_primarias" value="Amarelo" id="cor_amarelo">
+                            <label for="cor_amarelo">
+                                <div class="color-swatch" style="background: #FFCC00;"></div>
+                                <span class="color-name">Amarelo</span>
+                            </label>
+                        </div>
+                        <div class="color-item">
+                            <input type="checkbox" name="cores_primarias" value="Dourado" id="cor_dourado">
+                            <label for="cor_dourado">
+                                <div class="color-swatch" style="background: #D4AF37;"></div>
+                                <span class="color-name">Dourado</span>
+                            </label>
+                        </div>
+                        <div class="color-item">
+                            <input type="checkbox" name="cores_primarias" value="Preto" id="cor_preto">
+                            <label for="cor_preto">
+                                <div class="color-swatch" style="background: #000000;"></div>
+                                <span class="color-name">Preto</span>
+                            </label>
+                        </div>
+                        <div class="color-item">
+                            <input type="checkbox" name="cores_primarias" value="Branco" id="cor_branco">
+                            <label for="cor_branco">
+                                <div class="color-swatch" style="background: #FFFFFF; border: 1px solid var(--glass-border);"></div>
+                                <span class="color-name">Branco</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Cores a Evitar</label>
+                    <textarea class="form-control" name="cores_evitar" placeholder="Liste cores que você NÃO quer na sua marca e o motivo."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Estilo Visual Desejado <span class="required">*</span></label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="estilo_visual" value="Minimalista">
+                            <span class="checkmark"></span>
+                            <span>Minimalista</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="estilo_visual" value="Moderno">
+                            <span class="checkmark"></span>
+                            <span>Moderno</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="estilo_visual" value="Clássico">
+                            <span class="checkmark"></span>
+                            <span>Clássico</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="estilo_visual" value="Luxuoso">
+                            <span class="checkmark"></span>
+                            <span>Luxuoso</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="estilo_visual" value="Artesanal">
+                            <span class="checkmark"></span>
+                            <span>Artesanal</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="estilo_visual" value="Vintage">
+                            <span class="checkmark"></span>
+                            <span>Vintage</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="estilo_visual" value="Futurista">
+                            <span class="checkmark"></span>
+                            <span>Futurista</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="estilo_visual" value="Orgânico">
+                            <span class="checkmark"></span>
+                            <span>Orgânico</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Tipo de Logotipo Preferido</label>
+                    <div class="radio-group">
+                        <label class="radio-item">
+                            <input type="radio" name="tipo_logotipo" value="Símbolo + Nome">
+                            <span class="radiomark"></span>
+                            <span>Símbolo + Nome</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="tipo_logotipo" value="Wordmark">
+                            <span class="radiomark"></span>
+                            <span>Wordmark (só texto)</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="tipo_logotipo" value="Símbolo Isolado">
+                            <span class="radiomark"></span>
+                            <span>Símbolo Isolado</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="tipo_logotipo" value="Emblema">
+                            <span class="radiomark"></span>
+                            <span>Emblema</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="tipo_logotipo" value="Decida por mim">
+                            <span class="radiomark"></span>
+                            <span>Surpreenda-me</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Preferência Tipográfica</label>
+                    <div class="radio-group">
+                        <label class="radio-item">
+                            <input type="radio" name="tipografia" value="Serifada">
+                            <span class="radiomark"></span>
+                            <span>Serifada (Clássica)</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="tipografia" value="Sem Serifa">
+                            <span class="radiomark"></span>
+                            <span>Sem Serifa (Moderna)</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="tipografia" value="Script">
+                            <span class="radiomark"></span>
+                            <span>Script (Manuscrita)</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="tipografia" value="Mista">
+                            <span class="radiomark"></span>
+                            <span>Mista</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 7: Aplicações da Marca -->
+            <div class="form-section" data-section="7">
+                <span class="section-number">07</span>
+                <div class="section-header">
+                    <h3 class="section-title"><i class="fas fa-mobile-alt"></i> Aplicações da Marca</h3>
+                    <p class="section-description">Onde sua marca será aplicada? Esta informação nos ajuda a criar um sistema visual versátil.</p>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Materiais Necessários <span class="required">*</span></label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="materiais" value="Logotipo Principal">
+                            <span class="checkmark"></span>
+                            <span>Logotipo Principal</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="materiais" value="Manual de Marca">
+                            <span class="checkmark"></span>
+                            <span>Manual de Identidade</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="materiais" value="Cartão de Visita">
+                            <span class="checkmark"></span>
+                            <span>Cartão de Visita</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="materiais" value="Redes Sociais">
+                            <span class="checkmark"></span>
+                            <span>Templates Redes Sociais</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="materiais" value="Assinatura E-mail">
+                            <span class="checkmark"></span>
+                            <span>Assinatura de E-mail</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="materiais" value="Papel Timbrado">
+                            <span class="checkmark"></span>
+                            <span>Papel Timbrado</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="materiais" value="Embalagem">
+                            <span class="checkmark"></span>
+                            <span>Embalagem/Packaging</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="materiais" value="Uniformes">
+                            <span class="checkmark"></span>
+                            <span>Uniformes</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Canais de Comunicação Principais</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="canais" value="Website">
+                            <span class="checkmark"></span>
+                            <span>Website</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="canais" value="Instagram">
+                            <span class="checkmark"></span>
+                            <span>Instagram</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="canais" value="Facebook">
+                            <span class="checkmark"></span>
+                            <span>Facebook</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="canais" value="LinkedIn">
+                            <span class="checkmark"></span>
+                            <span>LinkedIn</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="canais" value="WhatsApp">
+                            <span class="checkmark"></span>
+                            <span>WhatsApp Business</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="canais" value="Material Impresso">
+                            <span class="checkmark"></span>
+                            <span>Material Impresso</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 8: Referências -->
+            <div class="form-section" data-section="8">
+                <span class="section-number">08</span>
+                <div class="section-header">
+                    <h3 class="section-title"><i class="fas fa-lightbulb"></i> Referências e Inspirações</h3>
+                    <p class="section-description">Marcas e referências visuais que inspiram você.</p>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Marcas que Você Admira <span class="required">*</span></label>
+                    <textarea class="form-control" name="marcas_admiradas" placeholder="Liste 3-5 marcas que você admira e explique o porquê:
+1. Apple - Minimalismo e sofisticação
+2. Nike - Energia e inspiração
+3. ..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Links de Referência Visual</label>
+                    <textarea class="form-control" name="links_referencia" placeholder="Cole links de sites, Behance, Pinterest, etc. que tenham visuais que você gosta."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Imagens de Referência / Mood</label>
+                    <div class="file-upload" id="refUpload">
+                        <i class="fas fa-images"></i>
+                        <p>Clique ou arraste imagens de referência<br><small>Fotos, materiais, designs que representam o estilo desejado</small></p>
+                        <input type="file" name="attachment" accept="image/*" multiple>
+                    </div>
+                    <div class="file-list" id="refFileList"></div>
+                </div>
+            </div>
+
+            <!-- SECTION 9: Informações Complementares -->
+            <div class="form-section" data-section="9">
+                <span class="section-number">09</span>
+                <div class="section-header">
+                    <h3 class="section-title"><i class="fas fa-info-circle"></i> Informações Complementares</h3>
+                    <p class="section-description">Informações adicionais importantes para o projeto.</p>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Slogan / Tagline Atual</label>
+                    <input type="text" class="form-control" name="slogan_atual" placeholder="Ex: Produção Audiovisual de Alto Padrão">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Deseja Criar um Novo Slogan?</label>
+                    <div class="radio-group">
+                        <label class="radio-item">
+                            <input type="radio" name="novo_slogan" value="Sim, preciso criar">
+                            <span class="radiomark"></span>
+                            <span>Sim, preciso criar</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="novo_slogan" value="Manter o atual">
+                            <span class="radiomark"></span>
+                            <span>Manter o atual</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="novo_slogan" value="Não preciso">
+                            <span class="radiomark"></span>
+                            <span>Não preciso</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Prazo Desejado para Entrega</label>
+                        <input type="date" class="form-control" name="prazo_entrega">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Orçamento Estimado</label>
+                        <select class="form-select" name="orcamento">
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="Até R$ 1.000">Até R$ 1.000</option>
+                            <option value="R$ 1.000 - R$ 3.000">R$ 1.000 - R$ 3.000</option>
+                            <option value="R$ 3.000 - R$ 5.000">R$ 3.000 - R$ 5.000</option>
+                            <option value="R$ 5.000 - R$ 10.000">R$ 5.000 - R$ 10.000</option>
+                            <option value="Acima de R$ 10.000">Acima de R$ 10.000</option>
+                            <option value="A definir">A definir</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Observações Adicionais</label>
+                    <textarea class="form-control" name="observacoes" placeholder="Alguma informação adicional que considere importante?"></textarea>
+                </div>
+            </div>
+
+            <!-- SECTION 10: Contato -->
+            <div class="form-section" data-section="10">
+                <span class="section-number">10</span>
+                <div class="section-header">
+                    <h3 class="section-title"><i class="fas fa-user"></i> Seus Dados de Contato</h3>
+                    <p class="section-description">Informações para que possamos entrar em contato.</p>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Nome Completo <span class="required">*</span></label>
+                        <input type="text" class="form-control" name="nome_contato" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Cargo/Função <span class="required">*</span></label>
+                        <input type="text" class="form-control" name="cargo_contato" placeholder="Ex: CEO, Diretor" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">E-mail <span class="required">*</span></label>
+                        <input type="email" class="form-control" name="email_contato" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Telefone/WhatsApp <span class="required">*</span></label>
+                        <input type="tel" class="form-control" name="telefone_contato" placeholder="(00) 00000-0000" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Preferência de Contato</label>
+                    <div class="radio-group">
+                        <label class="radio-item">
+                            <input type="radio" name="preferencia_contato" value="WhatsApp" checked>
+                            <span class="radiomark"></span>
+                            <span>WhatsApp</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="preferencia_contato" value="E-mail">
+                            <span class="radiomark"></span>
+                            <span>E-mail</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="preferencia_contato" value="Ligação">
+                            <span class="radiomark"></span>
+                            <span>Ligação</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LGPD Consent Section -->
+            <div class="lgpd-consent" id="lgpdConsent">
+                <h3><i class="fas fa-shield-alt"></i> Consentimento para Tratamento de Dados</h3>
+                <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 1.5rem;">
+                    Para prosseguir, é necessário aceitar os termos abaixo em conformidade com a <strong>Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018)</strong>:
+                </p>
+
+                <div class="lgpd-consent-item">
+                    <input type="checkbox" id="consent_dados" name="consent_dados" value="Sim" required>
+                    <label for="consent_dados">
+                        <strong>Consentimento para Coleta e Tratamento de Dados:</strong> Declaro que fui informado(a) sobre a coleta e uso dos meus dados pessoais para a finalidade de elaboração de proposta comercial e desenvolvimento de projeto de branding pela UFA FILM. Estou ciente de que posso solicitar, a qualquer momento, informações sobre o tratamento dos meus dados, bem como sua correção ou exclusão, através do e-mail <a href="mailto:eclatnoble1@gmail.com">eclatnoble1@gmail.com</a>.
+                    </label>
+                </div>
+
+                <div class="lgpd-consent-item">
+                    <input type="checkbox" id="consent_contato" name="consent_contato" value="Sim" required>
+                    <label for="consent_contato">
+                        <strong>Autorização para Contato:</strong> Autorizo a UFA FILM a entrar em contato comigo através dos dados informados (e-mail, telefone, WhatsApp) para tratar sobre este projeto e serviços relacionados.
+                    </label>
+                </div>
+
+                <div class="lgpd-consent-item">
+                    <input type="checkbox" id="consent_termos" name="consent_termos" value="Sim" required>
+                    <label for="consent_termos">
+                        <strong>Li e concordo com a <a href="#" onclick="openPrivacyModal(); return false;">Política de Privacidade</a></strong> da UFA FILM, que descreve como meus dados serão tratados, armazenados e protegidos.
+                    </label>
+                </div>
+
+                <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 1rem;">
+                    <i class="fas fa-info-circle"></i> Seus dados são armazenados de forma segura e não serão compartilhados com terceiros sem seu consentimento expresso. O não preenchimento dos dados pode impedir a prestação do serviço solicitado.
+                </p>
+            </div>
+
+            <!-- Submit Section -->
+            <div class="submit-section">
+                <h3>Pronto para Enviar?</h3>
+                <p>Após enviar, nossa equipe analisará suas respostas e entraremos em contato para discutir os próximos passos do seu projeto de branding.</p>
+                <button type="submit" class="form-submit" id="submitBtn">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Enviar Questionário</span>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div class="privacy-modal" id="privacyModal">
+        <div class="privacy-content">
+            <button class="privacy-close" onclick="closePrivacyModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2><i class="fas fa-user-shield" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Política de Privacidade</h2>
+            
+            <h3>1. Controlador de Dados</h3>
+            <p>UFA FILM - Produção Audiovisual de Alto Padrão<br>
+            E-mail: <strong>eclatnoble1@gmail.com</strong><br>
+            WhatsApp: <strong>(62) 98433-2509</strong></p>
+            
+            <h3>2. Dados Coletados</h3>
+            <p>Coletamos os seguintes dados pessoais através deste questionário:</p>
+            <ul>
+                <li><strong>Dados de identificação:</strong> nome completo, cargo/função</li>
+                <li><strong>Dados de contato:</strong> e-mail, telefone/WhatsApp</li>
+                <li><strong>Dados empresariais:</strong> nome da empresa, CNPJ, segmento, porte</li>
+                <li><strong>Dados de preferência:</strong> informações sobre branding, estilo visual, cores, etc.</li>
+            </ul>
+            
+            <h3>3. Finalidade do Tratamento</h3>
+            <p>Seus dados são tratados exclusivamente para:</p>
+            <ul>
+                <li>Elaboração de proposta comercial para serviços de branding</li>
+                <li>Desenvolvimento do projeto de identidade visual</li>
+                <li>Contato para discussão do projeto</li>
+                <li>Envio de comunicações relacionadas ao serviço contratado</li>
+            </ul>
+            
+            <h3>4. Base Legal</h3>
+            <p>O tratamento de seus dados pessoais ocorre com base no <strong>consentimento</strong> (Art. 7º, I da LGPD), manifestado através do preenchimento deste questionário e aceitação dos termos de consentimento.</p>
+            
+            <h3>5. Compartilhamento de Dados</h3>
+            <p><strong>Seus dados NÃO são compartilhados</strong> com terceiros, exceto:</p>
+            <ul>
+                <li>Quando necessário para prestação do serviço (ex: gráficas para impressão)</li>
+                <li>Quando exigido por lei ou ordem judicial</li>
+                <li>Com sua autorização expressa</li>
+            </ul>
+            
+            <h3>6. Armazenamento e Segurança</h3>
+            <p>Seus dados são armazenados de forma segura, utilizando:</p>
+            <ul>
+                <li>Transmissão criptografada (HTTPS/TLS)</li>
+                <li>Acesso restrito a pessoas autorizadas</li>
+                <li>Controles técnicos e administrativos de segurança</li>
+            </ul>
+            
+            <h3>7. Prazo de Armazenamento</h3>
+            <p>Seus dados serão armazenados pelo prazo necessário para:</p>
+            <ul>
+                <li>Execução do serviço contratado</li>
+                <li>Cumprimento de obrigações legais</li>
+                <li>Defesa em processos judiciais (até 5 anos após o término do serviço)</li>
+            </ul>
+            
+            <h3>8. Seus Direitos (Art. 18 da LGPD)</h3>
+            <p>Você tem direito a:</p>
+            <ul>
+                <li><strong>Confirmação e acesso:</strong> confirmar a existência de tratamento e acessar seus dados</li>
+                <li><strong>Correção:</strong> solicitar correção de dados incompletos, inexatos ou desatualizados</li>
+                <li><strong>Anonimização, bloqueio ou eliminação:</strong> de dados desnecessários ou excessivos</li>
+                <li><strong>Portabilidade:</strong> obter cópia dos seus dados em formato estruturado</li>
+                <li><strong>Eliminação:</strong> solicitar a exclusão de seus dados tratados com base no consentimento</li>
+                <li><strong>Revogação do consentimento:</strong> retirar seu consentimento a qualquer momento</li>
+            </ul>
+            <p>Para exercer seus direitos, entre em contato pelo e-mail <strong>eclatnoble1@gmail.com</strong>.</p>
+            
+            <h3>9. Cookies e Tecnologias Similares</h3>
+            <p>Este questionário não utiliza cookies de rastreamento. O serviço FormSubmit.co pode utilizar cookies técnicos necessários para o funcionamento do envio do formulário.</p>
+            
+            <h3>10. Alterações nesta Política</h3>
+            <p>Esta política pode ser atualizada a qualquer momento. A versão mais recente estará sempre disponível neste endereço.</p>
+            
+            <h3>11. Contato do Encarregado (DPO)</h3>
+            <p>Para questões relacionadas à proteção de dados pessoais:<br>
+            E-mail: <strong>eclatnoble1@gmail.com</strong></p>
+            
+            <p style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--glass-border); color: var(--text-muted); font-size: 0.8rem;">
+                <strong>Última atualização:</strong> Março de 2024<br>
+                <strong>Versão:</strong> 1.0
+            </p>
+        </div>
+    </div>
+
+    <!-- Success Overlay -->
+    <div class="success-overlay" id="successOverlay">
+        <div class="success-content">
+            <div class="success-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            <h2>Questionário Enviado!</h2>
+            <p>Obrigado por responder nosso questionário de branding. Suas respostas foram enviadas com segurança e nossa equipe entrará em contato em breve para dar início ao seu projeto.</p>
+            <a href="https://eclatnoble1.github.io/ufa.film/" class="success-btn">
+                <i class="fas fa-home"></i>
+                <span>Voltar ao Site</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">UFA <span>FILM</span></div>
+        <p class="footer-text">Produção audiovisual de alto padrão. Transformando visões em experiências cinematográficas.</p>
+        <div class="footer-links">
+            <a href="#" onclick="openPrivacyModal(); return false;">Política de Privacidade</a>
+            <a href="mailto:eclatnoble1@gmail.com">Contato: eclatnoble1@gmail.com</a>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.75rem; margin-top: 1rem;">
+            © 2024 UFA FILM. Todos os direitos reservados. | Em conformidade com a LGPD (Lei nº 13.709/2018)
+        </p>
+    </footer>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"><i class="fas fa-check-circle"></i><span id="toastMsg">Mensagem enviada!</span></div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        // Preloader Animation
+        window.addEventListener('load', () => {
+            const tl = gsap.timeline();
+            tl.to('.preloader-text', { opacity: 1, y: 0, duration: 0.6 })
+              .to('.preloader-progress', {
+                  width: '100%', 
+                  duration: 1.5,
+                  onUpdate: function() {
+                      gsap.set('.preloader-logo', { 
+                          opacity: this.progress(), 
+                          scale: 0.8 + this.progress() * 0.2 
+                      });
+                  }
+              }, '-=0.2')
+              .to('#preloader', { yPercent: -100, duration: 0.8 });
+        });
+
+        // Privacy Modal Functions
+        function openPrivacyModal() {
+            document.getElementById('privacyModal').classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePrivacyModal() {
+            document.getElementById('privacyModal').classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on click outside
+        document.getElementById('privacyModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePrivacyModal();
+            }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closePrivacyModal();
+            }
+        });
+
+        // Progress Bar
+        function updateProgress() {
+            const form = document.getElementById('brandingForm');
+            const requiredInputs = form.querySelectorAll('[required]');
+            const groups = new Map();
+            
+            requiredInputs.forEach(input => {
+                if (input.type === 'checkbox' || input.type === 'radio') {
+                    const name = input.name;
+                    if (!groups.has(name)) groups.set(name, false);
+                    if (input.checked) groups.set(name, true);
+                } else if (input.value.trim()) {
+                    groups.set(input.name, true);
+                }
+            });
+            
+            let filled = 0;
+            groups.forEach((value) => {
+                if (value) filled++;
+            });
+            
+            const progress = Math.round((filled / groups.size) * 100);
+            document.getElementById('progressBar').style.width = progress + '%';
+            document.getElementById('progressText').textContent = progress + '% Completo';
+        }
+
+        document.getElementById('brandingForm').addEventListener('input', updateProgress);
+        document.getElementById('brandingForm').addEventListener('change', updateProgress);
+
+        // Conditional sections
+        document.querySelectorAll('select[name="segmento"]').forEach(select => {
+            select.addEventListener('change', function() {
+                const outroSection = document.getElementById('outroSegmento');
+                if (this.value === 'Outro') {
+                    outroSection.classList.add('show');
+                } else {
+                    outroSection.classList.remove('show');
+                }
+            });
+        });
+
+        // File upload
+        function setupFileUpload(uploadId, listId) {
+            const upload = document.getElementById(uploadId);
+            const list = document.getElementById(listId);
+            const input = upload.querySelector('input[type="file"]');
+            
+            upload.addEventListener('click', () => input.click());
+            
+            upload.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                upload.style.borderColor = 'var(--primary-color)';
+            });
+            
+            upload.addEventListener('dragleave', () => {
+                upload.style.borderColor = 'var(--glass-border)';
+            });
+            
+            upload.addEventListener('drop', (e) => {
+                e.preventDefault();
+                upload.style.borderColor = 'var(--glass-border)';
+                handleFiles(e.dataTransfer.files, list);
+            });
+            
+            input.addEventListener('change', (e) => {
+                handleFiles(e.target.files, list);
+            });
+        }
+
+        function handleFiles(files, list) {
+            Array.from(files).forEach(file => {
+                const item = document.createElement('div');
+                item.className = 'file-item';
+                item.innerHTML = `<i class="fas fa-file"></i><span>${file.name}</span>`;
+                list.appendChild(item);
+            });
+        }
+
+        setupFileUpload('refUpload', 'refFileList');
+
+        // Limit checkbox selections
+        function limitCheckboxes(name, max) {
+            const checkboxes = document.querySelectorAll(`input[name="${name}"]`);
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const checked = document.querySelectorAll(`input[name="${name}"]:checked`);
+                    if (checked.length > max) {
+                        this.checked = false;
+                        showToast(`Selecione no máximo ${max} opções.`);
+                    }
+                });
+            });
+        }
+
+        limitCheckboxes('cores_primarias', 3);
+        limitCheckboxes('atributos', 5);
+
+        // Form submission with security validation
+        document.getElementById('brandingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Check honeypot (anti-bot)
+            const honeypot = this.querySelector('input[name="website"]');
+            if (honeypot && honeypot.value) {
+                console.log('Bot detected');
+                return false;
+            }
+            
+            // Check LGPD consents
+            const consentDados = document.getElementById('consent_dados');
+            const consentContato = document.getElementById('consent_contato');
+            const consentTermos = document.getElementById('consent_termos');
+            
+            if (!consentDados.checked || !consentContato.checked || !consentTermos.checked) {
+                showToast('Por favor, aceite todos os termos de consentimento para continuar.', true);
+                document.getElementById('lgpdConsent').scrollIntoView({ behavior: 'smooth' });
+                return false;
+            }
+            
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Enviando...</span>';
+            
+            // Collect all form data
+            const formData = new FormData(this);
+            
+            // Format checkboxes
+            const checkboxGroups = {};
+            formData.forEach((value, key) => {
+                if (this.querySelector(`input[name="${key}"][type="checkbox"]`)) {
+                    if (!checkboxGroups[key]) checkboxGroups[key] = [];
+                    checkboxGroups[key].push(value);
+                }
+            });
+            
+            // Update formData with formatted checkbox values
+            Object.keys(checkboxGroups).forEach(key => {
+                formData.set(key, checkboxGroups[key].join(', '));
+            });
+            
+            // Add timestamp
+            formData.append('data_envio', new Date().toLocaleString('pt-BR'));
+            formData.append('ip_coletado', 'Não armazenado por questões de privacidade');
+            
+            // Submit to FormSubmit
+            fetch('https://formsubmit.co/eclatnoble1@gmail.com', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('successOverlay').classList.add('show');
+                } else {
+                    throw new Error('Erro no envio');
+                }
+            })
+            .catch(error => {
+                showToast('Erro ao enviar. Tente novamente.', true);
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i><span>Enviar Questionário</span>';
+            });
+        });
+
+        // Toast notification
+        function showToast(message, isError = false) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            toastMsg.textContent = message;
+            
+            if (isError) {
+                toast.classList.add('error');
+                toast.querySelector('i').className = 'fas fa-exclamation-circle';
+            } else {
+                toast.classList.remove('error');
+                toast.querySelector('i').className = 'fas fa-check-circle';
+            }
+            
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 4000);
+        }
+
+        // Initial progress update
+        setTimeout(updateProgress, 500);
+    </script>
+</body>
+</html>
